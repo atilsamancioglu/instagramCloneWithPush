@@ -53,7 +53,7 @@ class feedCell: UITableViewCell {
                         for object in objects! {
                             self.playerIDArray.append(object.object(forKey: "playerID") as! String)
                             
-                             OneSignal.postNotification(["contents" : ["en" : "\(PFUser.current()!.username!) has commented on your post"], "include_player_ids" : ["\(self.playerIDArray.last!)"]])
+                             OneSignal.postNotification(["contents" : ["en" : "\(PFUser.current()!.username!) has commented on your post"], "include_player_ids" : ["\(self.playerIDArray.last!)"], "ios_badgeType" : "Increase", "ios_badgeCount" : "1"])
                             
                         }
                     }
@@ -86,7 +86,7 @@ class feedCell: UITableViewCell {
                         for object in objects! {
                             self.playerIDArray.append(object.object(forKey: "playerID") as! String)
                             
-                            OneSignal.postNotification(["contents" : ["en" : "\(PFUser.current()!.username!) has liked your post"], "include_player_ids" : ["\(self.playerIDArray.last!)"]])
+                            OneSignal.postNotification(["contents" : ["en" : "\(PFUser.current()!.username!) has liked your post"], "include_player_ids" : ["\(self.playerIDArray.last!)"], "ios_badgeType" : "Increase", "ios_badgeCount" : "1"])
                             
                         }
                     }
